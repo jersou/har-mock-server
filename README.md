@@ -17,15 +17,15 @@ And replay the queries with this mock server.
       `deno install --name har-mock-server -f -g -NR ./har-mock-server.ts` → then use with `har-mock-server file.har`
 - Run from [jsr](https://jsr.io/) :
     - Run directly :
-      `deno run -NR jsr:@jersou/har-mock-server@0.1.0 examples/jsonplaceholder_simplified.har`
+      `deno run -NR jsr:@jersou/har-mock-server@0.1.1 examples/jsonplaceholder_simplified.har`
     - Install :
-      `deno install --name har-mock-server -f -g -NR jsr:@jersou/har-mock-server@0.1.0` → then use with
+      `deno install --name har-mock-server -f -g -NR jsr:@jersou/har-mock-server@0.1.1` → then use with
       `har-mock-server file.har`
 
 ## Usage
 
 ```
-./har-mock-server.ts --help
+$ ./har-mock-server.ts --help
 Run a mock server based on queries from an HAR file
 
 Usage: har-mock-server.ts [Options] <HAR file>
@@ -41,15 +41,26 @@ Options:
 ./har-mock-server.ts examples/jsonplaceholder_simplified.har
 ```
 
+The `examples/jsonplaceholder_simplified.har` file contains 3 queries :
+
+```json
+{ "log": { "entries": [
+      { "request": { "url": "https://jsonplaceholder.typicode.com/todos/2", ... },
+      { "request": { "url": "https://jsonplaceholder.typicode.com/todos/10?param=5", ... },
+      { "request": { "url": "https://jsonplaceholder.typicode.com/todos/10?param=9", ... }
+] } }
+```
+
+A query found in the HAR file :
+
 ```
 $ curl "http://localhost:8080/todos/10?param=5"
-{
-  "userId": 1,
-  "id": 10,
-  "title": "illo est ratione doloremque quia maiores aut",
-  "completed": true
-}%
+{ "userId": 1, ... }%
+```
 
+A missing query from the HAR file :
+
+```
 $ curl "http://localhost:8080/todos/10?param=8"
 Mock not found%
 ```
