@@ -1,5 +1,9 @@
 # HAR mock server
 
+
+[![JSR](https://jsr.io/badges/@jersou/har-mock-server)](https://jsr.io/@jersou/har-mock-server)
+[![JSR Score](https://jsr.io/badges/@jersou/har-mock-server/score)](https://jsr.io/@jersou/har-mock-server)
+
 Mock server from an HAR file.
 
 From Chrome/Firefox, open the dev tools, record queries, and export it :
