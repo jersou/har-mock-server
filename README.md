@@ -11,7 +11,7 @@ From Chrome/Firefox, open the dev tools, record queries, and export it :
 - `Export HAR` buton on Chrome
 - `Save All As HAR` on Firefox by right click on queries.
 
-And replay the queries with this mock server.
+And replay the queries with this mock server : it returns responses for requests matching the requested path (ignoring the hostname).
 
 ## Run / Installation
 
