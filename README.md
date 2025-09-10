@@ -1,6 +1,6 @@
 # HAR mock server
 
-[![har-mock-server on NPM](https://img.shields.io/npm/v/har-mock-server.svg)](https://npmjs.org/package/har-mock-server)
+[![har-mock-server on NPM](https://img.shields.io/npm/v/har-mock-server.svg)](https://npmjs.org/package/har-mocker)
 [![JSR](https://jsr.io/badges/@jersou/har-mock-server)](https://jsr.io/@jersou/har-mock-server)
 [![JSR Score](https://jsr.io/badges/@jersou/har-mock-server/score)](https://jsr.io/@jersou/har-mock-server)
 
@@ -18,9 +18,10 @@ the hostname).
 
 ### With node
 
-`npm i -g har-mocker` and run with `har-mocker examples/jsonplaceholder_simplified.har`
-
-Or with npx : `npx har-mocker examples/jsonplaceholder_simplified.har`
+- **With npx** : `npx har-mocker examples/jsonplaceholder_simplified.har`
+- or install it :
+    - with `npm i -g har-mocker`
+    - and run with `har-mocker examples/jsonplaceholder_simplified.har`
 
 ### With deno
 
