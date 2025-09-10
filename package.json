@@ -1,0 +1,30 @@
+{
+  "name": "har-mocker",
+  "version": "0.1.2",
+  "description": "Mock server from an HAR file",
+  "main": "har-mock-server.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jersou/har-mock-server.git"
+  },
+  "keywords": [
+    "HAR",
+    "mock",
+    "server"
+  ],
+  "author": "jersou",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jersou/har-mock-server/issues"
+  },
+  "homepage": "https://github.com/jersou/har-mock-server#readme",
+  "dependencies": {
+    "clite-parser": "^0.7.7"
+  },
+  "files": [
+    "./har-mock-server.mjs",
+    "./README.md"
+  ],
+  "bin": "./har-mock-server.mjs"
+}

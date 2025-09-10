@@ -1,6 +1,6 @@
 # HAR mock server
 
-
+[![har-mock-server on NPM](https://img.shields.io/npm/v/har-mock-server.svg)](https://npmjs.org/package/har-mock-server)
 [![JSR](https://jsr.io/badges/@jersou/har-mock-server)](https://jsr.io/@jersou/har-mock-server)
 [![JSR Score](https://jsr.io/badges/@jersou/har-mock-server/score)](https://jsr.io/@jersou/har-mock-server)
 
@@ -11,14 +11,24 @@ From Chrome/Firefox, open the dev tools, record queries, and export it :
 - `Export HAR` buton on Chrome
 - `Save All As HAR` on Firefox by right click on queries.
 
-And replay the queries with this mock server : it returns responses for requests matching the requested path (ignoring the hostname).
+And replay the queries with this mock server : it returns responses for requests matching the requested path (ignoring
+the hostname).
 
 ## Run / Installation
 
+### With node
+
+`npm i -g har-mocker` and run with `har-mocker examples/jsonplaceholder_simplified.har`
+
+Or with npx : `npx har-mocker examples/jsonplaceholder_simplified.har`
+
+### With deno
+
 - From source :
-    - Run directly : `./har-mock-server.ts examples/jsonplaceholder_simplified.har`
+    - Run directly : `./har-mock-server-deno.ts examples/jsonplaceholder_simplified.har`
     - Install :
-      `deno install --name har-mock-server -f -g -NR ./har-mock-server.ts` → then use with `har-mock-server file.har`
+      `deno install --name har-mock-server -f -g -NR ./har-mock-server-deno.ts` → then use with
+      `har-mock-server file.har`
 - Run from [jsr](https://jsr.io/) :
     - Run directly :
       `deno run -NR jsr:@jersou/har-mock-server@0.1.1 examples/jsonplaceholder_simplified.har`
@@ -29,10 +39,10 @@ And replay the queries with this mock server : it returns responses for requests
 ## Usage
 
 ```
-$ ./har-mock-server.ts --help
+$ ./har-mock-server(-deno.ts|.js) --help
 Run a mock server based on queries from an HAR file
 
-Usage: har-mock-server.ts [Options] <HAR file>
+Usage: har-mock-server [Options] <HAR file>
 
 Options:
  -h, --help Show this help    [default: false]
@@ -42,7 +52,8 @@ Options:
 ## Exemple
 
 ```shell
-./har-mock-server.ts examples/jsonplaceholder_simplified.har
+./har-mock-server.js examples/jsonplaceholder_simplified.har
+# or with deno : ./har-mock-server-deno.ts examples/jsonplaceholder_simplified.har
 ```
 
 The `examples/jsonplaceholder_simplified.har` file contains 3 queries :
@@ -72,18 +83,18 @@ Mock not found%
 The server logs :
 
 ```
-$ ./har-mock-server.ts examples/jsonplaceholder_simplified.har
+$ har-mock-server examples/jsonplaceholder_simplified.har
 Listening on http://0.0.0.0:8080/ (http://localhost:8080/)
 [200] GET http://localhost:8080/todos/10?param=5
 [404] entry not found : GET http://localhost:8080/todos/10?param=8
 ```
 
-## Simplify HAR file
+## Simplify HAR file (with deno)
 
 To reduce HAR size to keep the minimum :
 
 ```shell
-./har-simplify.ts ./http1.har
+./har-simplify-deno.ts ./http1.har
 ```
 
 → ./http1_simplified.har is created.

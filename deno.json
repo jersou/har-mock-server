@@ -1,6 +1,6 @@
 {
   "name": "@jersou/har-mock-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
-  "exports": "./har-mock-server.ts"
+  "exports": "./har-mock-server-deno.ts"
 }
