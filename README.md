@@ -1,6 +1,6 @@
 # HAR mock server
 
-[![har-mock-server on NPM](https://img.shields.io/npm/v/har-mock-server.svg)](https://npmjs.org/package/har-mocker)
+[![har-mock-server on NPM](https://img.shields.io/npm/v/har-mocker.svg)](https://npmjs.org/package/har-mocker)
 [![JSR](https://jsr.io/badges/@jersou/har-mock-server)](https://jsr.io/@jersou/har-mock-server)
 [![JSR Score](https://jsr.io/badges/@jersou/har-mock-server/score)](https://jsr.io/@jersou/har-mock-server)
 
