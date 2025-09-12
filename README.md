@@ -1,4 +1,4 @@
-# HAR mock server
+# HAR-mock-server / har-mocker
 
 [![har-mock-server on NPM](https://img.shields.io/npm/v/har-mocker.svg)](https://npmjs.org/package/har-mocker)
 [![JSR](https://jsr.io/badges/@jersou/har-mock-server)](https://jsr.io/@jersou/har-mock-server)
@@ -11,8 +11,9 @@ From Chrome/Firefox, open the dev tools, record queries, and export it :
 - `Export HAR` buton on Chrome
 - `Save All As HAR` on Firefox by right click on queries.
 
-And replay the queries with this mock server : it returns responses for requests matching the requested path (ignoring
-the hostname).
+And replay the queries with this mock server (`npx har-mocker file.har`) : it
+returns responses for requests matching the requested path (ignoring the
+hostname).
 
 ## Run / Installation
 
@@ -20,22 +21,23 @@ the hostname).
 
 - **With npx** : `npx har-mocker examples/jsonplaceholder_simplified.har`
 - or install it :
-    - with `npm i -g har-mocker`
-    - and run with `har-mocker examples/jsonplaceholder_simplified.har`
+  - with `npm i -g har-mocker`
+  - and run with `har-mocker examples/jsonplaceholder_simplified.har`
 
 ### With deno
 
 - From source :
-    - Run directly : `./har-mock-server-deno.ts examples/jsonplaceholder_simplified.har`
-    - Install :
-      `deno install --name har-mock-server -f -g -NR ./har-mock-server-deno.ts` → then use with
-      `har-mock-server file.har`
+  - Run directly :
+    `./har-mock-server-deno.ts examples/jsonplaceholder_simplified.har`
+  - Install :
+    `deno install --name har-mock-server -f -g -NR ./har-mock-server-deno.ts` →
+    then use with `har-mock-server file.har`
 - Run from [jsr](https://jsr.io/) :
-    - Run directly :
-      `deno run -NR jsr:@jersou/har-mock-server@0.1.1 examples/jsonplaceholder_simplified.har`
-    - Install :
-      `deno install --name har-mock-server -f -g -NR jsr:@jersou/har-mock-server@0.1.1` → then use with
-      `har-mock-server file.har`
+  - Run directly :
+    `deno run -NR jsr:@jersou/har-mock-server@0.1.4 examples/jsonplaceholder_simplified.har`
+  - Install :
+    `deno install --name har-mock-server -f -g -NR jsr:@jersou/har-mock-server@0.1.4`
+    → then use with `har-mock-server file.har`
 
 ## Usage
 
